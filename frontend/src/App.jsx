@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Shield, Scan } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import Analyzer from './pages/Analyzer';
 import Results from './pages/Results';
 import ThemeToggle from './components/ThemeToggle';
@@ -76,28 +76,6 @@ function Navbar() {
 
         {/* Nav links + toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <Link
-            to="/"
-            style={navLinkStyle('/')}
-            onMouseEnter={e => {
-              if (!isActive('/')) {
-                e.currentTarget.style.color = 'var(--text-primary)';
-                e.currentTarget.style.background = 'var(--bg-elevated)';
-                e.currentTarget.style.boxShadow = 'var(--neo-sm)';
-              }
-            }}
-            onMouseLeave={e => {
-              if (!isActive('/')) {
-                e.currentTarget.style.color = 'var(--text-secondary)';
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.boxShadow = 'none';
-              }
-            }}
-          >
-            <Scan size={15} />
-            Analyze
-          </Link>
-
           {/* Divider */}
           <div style={{
             width: '1px',
@@ -106,12 +84,12 @@ function Navbar() {
             margin: '0 0.5rem',
           }} />
 
-          <ThemeToggle />
-        </div>
-      </div>
-    </nav>
-  );
-}
+              <ThemeToggle />
+            </div>
+                  </div>
+                </nav>
+              );
+            }
 
 export default function App() {
   return (
