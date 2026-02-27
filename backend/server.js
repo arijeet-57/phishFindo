@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
   res.json({ status: 'PhishGuard AI Backend Running' });
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() })
+})
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
