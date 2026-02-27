@@ -1,14 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Shield, Scan, History as HistoryIcon } from 'lucide-react';
+import { Shield, Scan } from 'lucide-react';
 import Analyzer from './pages/Analyzer';
-import History from './pages/History';
 import Results from './pages/Results';
 import ThemeToggle from './components/ThemeToggle';
 
 function Navbar() {
   const location = useLocation();
-
   const isActive = (path) => location.pathname === path;
 
   const navLinkStyle = (path) => ({
@@ -100,28 +98,6 @@ function Navbar() {
             Analyze
           </Link>
 
-          <Link
-            to="/history"
-            style={navLinkStyle('/history')}
-            onMouseEnter={e => {
-              if (!isActive('/history')) {
-                e.currentTarget.style.color = 'var(--text-primary)';
-                e.currentTarget.style.background = 'var(--bg-elevated)';
-                e.currentTarget.style.boxShadow = 'var(--neo-sm)';
-              }
-            }}
-            onMouseLeave={e => {
-              if (!isActive('/history')) {
-                e.currentTarget.style.color = 'var(--text-secondary)';
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.boxShadow = 'none';
-              }
-            }}
-          >
-            <HistoryIcon size={15} />
-            History
-          </Link>
-
           {/* Divider */}
           <div style={{
             width: '1px',
@@ -145,7 +121,6 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<Analyzer />} />
-            <Route path="/history" element={<History />} />
             <Route path="/results/:id" element={<Results />} />
           </Routes>
         </main>
