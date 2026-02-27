@@ -11,7 +11,7 @@ export const api = {
       formData.append('file', file);
     }
 
-    const response = await axios.post(`${API_URL}/analyze`, formData, {
+    const response = await axios.post(`${API_URL}/api/analyze`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
     return response.data;
