@@ -47,7 +47,7 @@ Respond ONLY with valid JSON in this exact format:
           content: prompt
         }
       ],
-      model: "llama-3.1-70b-versatile",
+      model: "llama-3.3-70b-versatile",
       temperature: 0.3,
       max_tokens: 2000,
     });
